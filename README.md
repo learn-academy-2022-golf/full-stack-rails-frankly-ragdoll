@@ -80,9 +80,28 @@ app/view/blog/show.html.erb
 
 # Can navigate from the list of all blog post titles to the view of any given blog post
 
-# Can see all the title and content for one blog post on a page
+\_**\_index.html.erb**\_\*\*\*\*
 
-# Can navigate back from the show page to the landing page
+<li>
+<a href= "/blog/<%= blog.id %>">
+<%= blog.title %>
+</a>
+</li>
+\_**\_show.html.erb**\_\_****
+<%= @blog.title %>
+<%= @blog.content %>
+
+# Can see all the title and content for one blog post on a page and Can navigate back from the show page to the landing page.
+
+<h1> This <%= @blog.title %> post </h1>
+<h2>
+<%= @blog.content %>
+</h2>
+<h3>
+<a href= "/">
+    <%= 'home' %>
+    </a>
+</h3>
 
 # Story 3: In order to interact with the blog post application, as a user of the application, I need to see a form where I can fill out information for a new blog post.
 
