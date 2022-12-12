@@ -56,8 +56,6 @@ Blog.create title: "Second Blog", content: "Learn academy is de best"
 <% end %>
 ```
 
-### FIXING BUGS HERE
-
 # Story 2: In order to interact with the blog post application, as a user of the application, I need to see the details of one blog post.
 
 # Branch: blog-show
@@ -104,12 +102,13 @@ app/view/blog/show.html.erb
 </h3>
 
 # Story 3: In order to interact with the blog post application, as a user of the application, I need to see a form where I can fill out information for a new blog post.
-
 # Branch: blog-new
-
 # Acceptance Criteria
+## BEGIN HERE
 
-Has a controller action for new
+# Has a controller action for new
+# Create new view titled new.html.erb
+
 Has a route for new
 Has a view for new
 Can navigate from the landing page to the view of the new page

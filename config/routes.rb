@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   root 'blog#index'
+  get 'new' => 'blog#new'
   get 'blog/:id' => 'blog#show'
-  #  get 'blogs/new' => 'blog#new'
+  
   #  post 'blogs' => 'blog#create'
 end
