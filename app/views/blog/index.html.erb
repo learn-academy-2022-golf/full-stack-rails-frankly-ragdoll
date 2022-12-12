@@ -1,3 +1,8 @@
+<h1> Da Blogs App! </h1>
 <% @blog.each do |blog| %>
-    <%= link_to 'Blog!', blog_path(blog) %>
+    <li>
+    <a href= "/blog/<%= blog.id %>">
+    <%= blog.title %>
+    </a>
+    </li>
 <% end %>

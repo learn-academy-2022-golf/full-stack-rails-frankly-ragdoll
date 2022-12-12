@@ -1,8 +1,11 @@
 # As a developer, I have been commissioned to create a blog post application. As an MVP, I have been asked to create an application where a user can see all the blog post titles, see the content of any given blog post, and the ability to create blog posts.
 
 # Story 1: In order to interact with the blog post application, as a user of the application, I need to see a list of all blog posts.
+
 # Branch: blog-index
+
 # Acceptance Criteria
+
 # Has a model for Blog with the following information: title and content
 
 In a Github teams named 'frankly-ragdoll'
@@ -19,41 +22,72 @@ rails generate model Blog title: string content: string
 rails db:migrate # slight hiccup but we did it
 
 # Has a controller for Blog
+
 rails generate controller Blog
 located in app/controllers/blog_controller.rb
 
 # Has a controller action for index
+
 class BlogController < ApplicationController
-    def index
-        render html hello
-    end
+def index
+render html hello
+end
 end
 
 # Has a route for index
+
 Added to app/config/routes.rb
 root 'blog#index'
 
 # Has a view for index
+
 Added app/views/blog/index.html.erb # simple hello world
 
 # Can see all the blog post titles on the landing page of the application
-Blog.create title: "First Blog", content: "Learn academy curriculum de best"
 
-### FIXING BUGS HERE ###
+Blog.create title: "First Blog", content: "Learn academy curriculum de best"
+Blog.create title: "Second Blog", content: "Learn academy is de best"
+
+```ruby
+<% @blog.each do |blog| %>
+    <li>
+    <%= blog.title %>
+    </li>
+<% end %>
+```
+
+### FIXING BUGS HERE
 
 # Story 2: In order to interact with the blog post application, as a user of the application, I need to see the details of one blog post.
+
 # Branch: blog-show
+
 # Acceptance Criteria
 
 # Has a controller action for show
+
+def show
+@blog = Blog.find(params [:id])
+end
+
 # Has a route for show
+
+get 'blog/:id' => 'blog#show', as: 'this_blog'
+
 # Has a view for show
+
+app/view/blog/show.html.erb
+
 # Can navigate from the list of all blog post titles to the view of any given blog post
+
 # Can see all the title and content for one blog post on a page
+
 # Can navigate back from the show page to the landing page
 
 # Story 3: In order to interact with the blog post application, as a user of the application, I need to see a form where I can fill out information for a new blog post.
+
 # Branch: blog-new
+
 # Acceptance Criteria
 
 Has a controller action for new
